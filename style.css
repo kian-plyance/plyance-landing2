@@ -10,6 +10,10 @@ body {
   color: #1f2937;
   background: #ffffff;
 }
+/* prevent any joystick of horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
 
 /* CONTAINER */
 .container {
@@ -106,7 +110,7 @@ body {
   color: #111827;
 }
 .hero::after {
-  /* semi‑opaque white overlay */
+  /* semi-opaque white overlay */
   content: '';
   position: absolute;
   inset: 0;
@@ -264,4 +268,58 @@ body {
   border-top: 1px solid #1f2937;
   padding: 1rem 0;
   font-size: 0.875rem;
+}
+
+/* ————————————————
+   MOBILE & TABLET BREAKPOINTS
+   ———————————————— */
+@media (max-width: 768px) {
+  /* NAVIGATION stacking */
+  .nav-container {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.75rem 0;
+  }
+  .nav-logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .nav-menu,
+  .nav-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0.25rem 0;
+  }
+  .nav-menu {
+    gap: 1rem;
+  }
+  .nav-actions {
+    gap: 1rem;
+  }
+
+  /* HERO spacing + type */
+  .hero {
+    padding: 80px 0;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* CONTACT CTA tighter */
+  .demo-cta {
+    padding: 1.5rem;
+  }
 }
